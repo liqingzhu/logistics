@@ -1,0 +1,23 @@
+.fc-productinfo{
+    width: 100%;
+    background: #f3f3f5;
+    clear: both;
+    min-height: 42.5px;
+}
+.fc-productinfo img{
+    float: left;
+    width: 34px;
+    height: 34.5px;
+    /*margin: 5px 11px 5px 5px;*/
+}
+.fc-productinfo span{
+    font-size: 14px;
+}
+.fc-sharetime span {
+    float: left;
+    display: block;
+    font-size: .14rem;
+}
+.fc-top{
+    margin-top: 20px;
+}

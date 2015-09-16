@@ -1,0 +1,163 @@
+<ion-view view-title="运单详情">
+  <ion-nav-buttons side="right">
+  </ion-nav-buttons>
+    <ion-content>
+      <div class="gg-container-100percent stable-bg">
+        <div class="gg-md-row">
+          <div class="gg-md-info">
+            配送要求:
+            <span class="gg-text-blueinfo">需冷藏,需保温,需冷冻
+              <span ng-if="vm.datainfo.coolflag==1">需冷藏,</span>
+              <span ng-if="vm.datainfo.breakflag==1">易碎,</span>
+              <span ng-if="vm.datainfo.warmflag==1">需保温,</span>
+            </span>
+          </div>
+          <div class="gg-md-infotop">
+            <span>送达时段:随时</span>
+            <span class="fr">配送费用:
+              <i class="gg-red">
+                <span ng-bind-html="vm.datainfo.sendamount|currency:'&yen;'"></span>
+              </i>
+            </span>
+          </div>
+          <div class="gg-md-infotop">
+            <span>应收金额:
+              <i class="gg-red">
+                <span ng-bind-html="vm.datainfo.orderamount|currency:'&yen;'"></span>
+              </i>
+            </span>
+            <span class="fr">小费:
+              <i class="gg-red">
+                <span ng-bind-html="vm.datainfo.tipamount|currency:'&yen;'"></span>
+              </i>
+            </span>
+          </div>
+        </div>
+        <div class="gg-md-row">
+          <div class="gg-md-info-time">
+            <!--预约单-->
+            <!--<div class="gg-md-left-yuyue fl">&nbsp;</div>-->
+            <!-实际单->
+            <div class="gg-md-left-shishou fl">&nbsp;</div>
+            <div class="gg-bold">
+              下单时间:
+              <span ng-bind-html="vm.datainfo.paytime"></span>
+            </div>
+          </div>
+        </div>
+        <div class="gg-md-row">
+          <div class="gg-md-info">
+            <div class="gg-md-statusbar">
+              <span class="gg-md-statusbar-onstatus fl">我</span>
+              <span class="gg-md-statusbar-span fl">25.59km</span>
+              <span class="gg-md-statusbar-nonstatus fl">发</span>
+              <span class="gg-md-statusbar-span fl">{{vm.datainfo.distince/1000|number:2}}km</span>
+              <span class="gg-md-statusbar-nonstatus fl">收</span>
+            </div>
+          </div>
+          <div class="gg-md-info"><span class="gg-order-detail-label">要求送达:</span>
+            <span class="gg-md-text">
+              <!--{{vm.datainfo.wondertime|date:'yyyy-MM-dd HH:mm:ss'}}-->
+              <span ng-bind-html="vm.datainfo.wondertime"></span>
+            </span>
+          </div>
+          <div class="gg-md-info"><span class="gg-order-detail-label">商家名称:</span>
+            <span class="gg-md-text">
+              <span ng-bind-html="vm.datainfo.sellername"></span>
+            </span>
+          </div>
+          <div class="gg-md-info"><span class="gg-order-detail-label">商家电话:</span>
+            <span class="gg-md-text">
+              <a href="tel:{{vm.datainfo.sellertel}}">
+                <span ng-bind-html="vm.datainfo.sellertel"></span>
+                <i class="icon ion-ios-telephone"></i>
+              </a>
+            </span>
+          </div>
+          <div class="gg-md-info"><span class="gg-order-detail-label">商家地址:</span>
+            <span class="gg-md-text">
+              <span ng-bind-html="vm.datainfo.selleraddr"></span>
+            </span>
+          </div>
+          <div class="gg-md-info"><span class="gg-order-detail-label">收货人:</span>
+            <span class="gg-md-text">
+              <span ng-bind-html="vm.datainfo.buyername"></span>:
+              <a href="tel:{{vm.datainfo.buyertel}}">
+                <span ng-bind-html="vm.datainfo.buyertel"></span>
+                <i class="icon ion-ios-telephone"></i>
+              </a>
+            </span>
+          </div>
+          <div class="gg-md-info"><span class="gg-order-detail-label">收货人地址:</span>
+            <span class="gg-md-text">
+              <span ng-bind-html="vm.datainfo.buyeraddr"></span>
+            </span>
+          </div>
+        </div>
+        <div class="gg-md-row">
+          <div class="gg-md-info">
+            <span>物品信息</span>
+            <span class="fr">应收货款:
+              <i class="gg-red">
+                <span ng-bind-html="vm.datainfo.orderamount|currency:'&yen;'"></span>
+              </i>
+            </span>
+          </div>
+          <div class="md-info" ng-repeat="good in vm.datainfo.goods">
+            <span class="gg-order-detail-label">{{good.goodsname}}&times;{{good.quality}}</span>
+            <span>总值:{{good.saleprice*good.quality|currency:'&yen;'}}</span>
+          </div>
+          <!--显示验证码按钮
+          <div class="md-infotop" ng-show="vm.datainfo.orderstate==3">
+            <span gg-order-detail-label>接货验证码:</span>
+            <span class="gg-text-blueinfo h1 title">
+              <span ng-bind-html="vm.datainfo.verifycode"></span>
+            </span>
+          </div>
+          <div class="md-info gg-globe-text-center" ng-show="vm.datainfo.orderstate==3">
+            <qrcode version="{{vm.qrcode.version}}"
+                    error-correction-level="{{vm.qrcode.level}}"
+                    size="{{vm.qrcode.size}}"
+                    data="{{vm.qrcode.foo}}">
+            </qrcode>
+          </div>
+          -->
+          <!--取货时候操作逻辑-->
+          <!--vm.datainfo.deliverystate-&#45;&#45;》{{vm.datainfo.deliverystate}}-->
+          <div class="row" ng-show="vm.datainfo.deliverystate==0">
+            <div class="col col-33">
+              <button ng-click="vm.arriveStore()" class="button button-balanced">抵达店铺</button>
+            </div>
+            <div class="col col-33">
+              <button ng-click="vm.getStuffSuccess()" class="button button-balanced">取货成功</button>
+            </div>
+            <div class="col col-33">
+              <button ng-click="vm.getStuffFailure()" class="button button-assertive">取货失败</button>
+            </div>
+          </div>
+          <!--派送时候操作逻辑-->
+          <div class="row" ng-show="vm.datainfo.flowstate==3 && vm.datainfo.finishstate==0">
+            <div class="col col-50">
+              <button ng-click="vm.finishSuccess()" class="button button-full button-balanced">妥投成功</button>
+            </div>
+            <div class="col col-50">
+              <button ng-click="vm.finishFailure()" class="button button-full button-assertive">妥投失败</button>
+            </div>
+          </div>
+          <!--妥投失败操作逻辑-->
+          <div class="row" ng-show="vm.datainfo.deliverystate==4 && vm.datainfo.finishstate==0">
+            <div class="col col-50">
+              <button ng-click="vm.storeTakeStuffSuccess()" class="button button-full button-balanced">返货成功</button>
+            </div>
+            <div class="col col-50">
+              <button ng-click="vm.takeOwnStuff()" class="button button-full button-assertive">自己认领</button>
+            </div>
+          </div>
+          <!--<div class="md-info gg-globe-text-center" ng-show="4==4">-->
+            <!--<input type="button" value="交付签收" class="lxt-w-baocunZ">-->
+            <!--<button class="lxt-w-baocunZ" ng-click="vm.handover()">交付签收</button>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

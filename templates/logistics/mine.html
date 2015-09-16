@@ -1,0 +1,69 @@
+<ion-view view-title="我的">
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content>
+        <a ui-sref='tab.editmine' class="item item-avatar">
+            <img src="img/images/caojian.jpg">
+            <h2>{{vm.user.name}}</h2>
+            <p>入职时间:2015-08-04</p>
+            <p>所属公司:丹旌物流公司</p>
+        </a>
+        <!--<div class="item item-divider">-->
+            <!--我的账户-->
+        <!--</div>-->
+        <!--<a class="item item-icon-left item-icon-right" ui-sref="tab.myaccount">
+            <i class="icon ion-social-yen-outline text-orange"></i>
+            我的余额
+            <span class="item-note">
+              ￥30000.00
+            </span>
+            <i class="icon ion-chevron-right"></i>
+        </a>-->
+        <a class="item item-icon-left item-icon-right" ui-sref="app.mineinfo">
+            <i class="icon ion-card  text-orange"></i>
+            个人资料
+            <i class="icon ion-chevron-right"></i>
+        </a>
+        <!--<div class="item item-divider"></div>-->
+        <!--<a class="item item-icon-left item-icon-right" ui-sref="tab.myreceive">
+            <i class="icon ion-ios-people  text-orange"></i>
+            直接送
+            <i class="icon ion-chevron-right"></i>
+        </a>-->
+        <a class="item item-icon-left item-icon-right" ui-sref="app.account">
+            <i class="icon ion-clipboard  text-orange"></i>
+            查看收成
+            <i class="icon ion-chevron-right"></i>
+        </a>
+        <div class="item item-divider">
+        </div>
+        <a class="item item-icon-left item-icon-right" ui-sref="app.companymessage">
+            <i class="icon ion-ios-list  text-orange"></i>
+            公司消息
+            <i class="icon ion-chevron-right"></i>
+        </a>
+        <a class="item item-icon-left item-icon-right" ui-sref="app.changecompany">
+            <i class="icon ion-ios-star  text-orange"></i>
+            更换公司
+            <i class="icon ion-chevron-right"></i>
+        </a>
+        <a class="item item-icon-left item-icon-right" ui-sref="app.signoutcompany">
+            <i class="icon ion-ios-paperplane  text-orange"></i>
+            申请离职
+            <i class="icon ion-chevron-right"></i>
+        </a>
+
+        <div class="item item-divider">
+        </div>
+        <a class="item item-icon-left item-icon-right" ng-click="vm.signOut()">
+            <i class="icon ion-log-out  text-green"></i>
+            退出
+            <i class="icon ion-chevron-right"></i>
+        </a>
+        <a class="item item-icon-left item-icon-right" ng-click="vm.checkNew()">
+            <i class="icon ion-gear-a  text-green"></i>
+            检查新版本
+            <i class="icon ion-chevron-right"></i>
+        </a>
+    </ion-content>
+</ion-view>

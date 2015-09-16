@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/css/friend.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/owner.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/reset.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/sendman.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/img/images/mcfly.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/img/logistics" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/img/logistics/point.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/js/src/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/src/directive.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/src/interceptors.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/src/logistics.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/src/lpservice.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/src/route.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/src/taskscontroller.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/src/tasksservice.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/src/user.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/src/userservice.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/angular" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/angular/ui-load.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/lib/ionic/css/style.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/jquery" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/other" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/ground" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/logistics" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/logistics/map.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/logistics/mine.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/logistics/orderlist.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/personal/accountinfo.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/personal/changecompany.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/personal/companymessage.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/personal/mydetail.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/personal/signoutcompany.html" charset="UTF-8" />
+  </component>
+</project>

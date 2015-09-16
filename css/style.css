@@ -1,0 +1,135 @@
+/* Empty. Add your own CSS if you like */
+.text-red {
+    color:red;
+}
+.text-green {
+    color:green;
+}
+.text-blue{
+    color:blue;
+}
+.text-lightblue{
+    color:#70c0ee;
+}
+.text-orange{
+    color:orange;
+}
+.text-purple{
+    color:purple;
+}
+.text-black{
+    color:black;
+}
+.text-grey{
+    color:#d2d2d2;
+}
+.go-box{
+    text-align: center;
+}
+.go-box a:link {
+    text-align: center;
+    color: #222222;
+    text-decoration:none;
+}
+.go-box a:visited{
+    text-align: center;
+    color: #222222;
+    text-decoration:none;
+}
+.go-box a:hover{
+    text-align: center;
+    color: green;
+    text-decoration:none;
+}
+
+.carousel{
+    text-align: center;
+    width:100%;
+    height: 200px;
+}
+
+.ap {
+    position: relative;
+}
+
+.ab {
+    position: absolute;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.oh {
+    overflow: hidden!important;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}
+.haveOrderList li{
+    margin-bottom:0.6em;
+    padding-bottom:0.5em;
+    background-color:#fff;
+    box-shadow:0 1px 4px
+    rgba(0,0,0,0.2); border-bottom:#d0d0d0 solid 1px;
+}
+.haveOrderList li .title{ height:2em; line-height:2em; margin-bottom:0.4em; border-top:#f0f0f0 solid 1px; border-bottom:#f0f0f0 solid 1px; background-color:#fdfdfd; font-size:16px;}
+.haveOrderList li .explain{ width:2.28em; height:2.6em; line-height:2em; left:0.9em; top:-0.23em; z-index:2; text-align:center; color:#fff; font-size:14px;}
+.haveOrderList li .explain-blue{ background:url(../img/logistics/explain-blue.png) no-repeat; background-size:cover;}
+.haveOrderList li .explain-red{ background:url(../img/logistics/explain-red.png) no-repeat; background-size:cover;}
+.haveOrderList li .titleText{ width:30%; margin-left:3em;}
+.haveOrderList li .time{ margin-right:1em; color:#70c0ee; font-size:13px;}
+.haveOrderList li .time img{ width:0.8em; height:0.8em; margin:-0.2em 0.4em 0 0; vertical-align:middle;}
+.haveOrderList li .address{ padding:0.1em 0 0.1em 1em; color:#343434;}
+.haveOrderList li .start,.haveOrderList li .end{ margin-right:0.3em; font-size:14px;}
+.haveOrderList li .addressText{ width:54%; margin-right:1em; font-size:14px;}
+.haveOrderList li .distance{ font-size:12px;}
+.haveOrderList li .distance img{ width:1.15em; height:1em; margin:-0.1em 0.4em 0 0; vertical-align:middle;}
+.global-textthrough{
+    text-decoration: line-through;
+}
+.global-textmedium{
+    font-size: medium;
+}
+.animate-show {
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+    line-height:20px;
+    opacity:1;
+    /*padding:10px;*/
+    border:1px solid white;
+    background:white;
+}
+
+.animate-show.ng-hide {
+    line-height:0;
+    opacity:0;
+    /*padding:0 10px;*/
+}
+
+.product-quantity {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.icon-plus-round {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.icon-minus-round {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

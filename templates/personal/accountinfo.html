@@ -1,0 +1,25 @@
+<ion-view view-title="我的账户">
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+
+    <ion-content>
+        <div class="row" scroll="false">
+            <div class="col col-50">
+                <button ng-click="vm.finishSuccess()" class="button button-full button-balanced">收入</button>
+            </div>
+            <div class="col col-50">
+                <button ng-click="vm.finishFailure()" class="button button-full button-assertive">支出</button>
+            </div>
+        </div>
+        <ion-list scroll="true">
+            <ion-item  class="item item-icon-right" ng-repeat="item in vm.items" >
+                <span ng-bind-html="item.month"></span>
+                <span class="fr">
+                <span ng-bind-html="item.amount|currency:'&yen;'"></span>
+                    <!--{{200|currency:'&yen;'}}-->
+                </span>
+                <i class="icon ion-chevron-right"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

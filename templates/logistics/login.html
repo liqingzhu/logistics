@@ -1,0 +1,27 @@
+<ion-view view-title="系统登陆">
+    <ion-content scroll="false">
+        <div class="list card">
+            <div class="item item-image">
+                <img src="img/login/head.jpg">
+            </div>
+            <label class="item item-input">
+                <i class="icon ion-iphone positive"></i>
+                <input type="text" placeholder="请输入您的手机号码" ng-model="vm.user.phone">
+            </label>
+
+            <label class="item item-input">
+                <i class="icon ion-ios-unlocked-outline positive"></i>
+                <input type="password" placeholder="请输入您的密码" ng-model="vm.user.password">
+            </label>
+
+            <div class="item">
+                <a ui-sref="findpassword" class="fl balanced">忘记密码</a>
+                <a ui-sref="signup" class="fr calm">点我注册</a>
+            </div>
+        </div>
+        <h2 class="assertive"><span ng-bind-html="vm.vaildatetext"></span>
+        <button class="button button-full button-positive" ng-click="vm.signin()">
+            立即登陆
+        </button>
+    </ion-content>
+</ion-view>

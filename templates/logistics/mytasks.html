@@ -1,0 +1,43 @@
+<ion-view title="我的任务" cache-view="false">
+    <div class="bar bar-subheader bar-calm">
+        <div class="button-bar">
+            <a class="button button-clear icon ion-ios-star-half" ng-click="vm.showDoingTasks()">未完成</a>
+            <a class="button button-clear icon ion-ios-star" ng-click="vm.showFinishTasks()">已完成</a>
+        </div>
+    </div>
+    <ion-content style="top:80px">
+        <div class="list card">
+            <a class="item item-body" ng-click="vm.showTaskDetail(item.id)" ng-repeat="item in vm.items">
+                <p>
+                    任务号码
+                    <span class="text-red">{{item.tasknum}}</span>
+                </p>
+                <p>
+                    开始时间{{item.starttime}}
+                </p>
+                <p>
+                    <span>
+                        <span class="text-orange">起点:</span>
+                        <span class="text-black">{{item.startaddress}}</span>
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        <span class="text-blue">终点:</span>
+                        <span class="text-black">{{item.endaddress}}</span>
+                    </span>
+                </p>
+                <p class="badge badge-assertive">
+                    {{item.orderqty}}单
+                </p>
+            </a>
+        </div>
+        <ion-infinite-scroll
+                ng-if="!vm.noMoreItemsAvailable"
+                on-infinite="vm.loadMore()"
+                distance="5%"
+                immediate-check="false"
+                >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,96 @@
+<!--<ion-view title="我要抢单" ng-controller="LogisticListCtrl">-->
+<ion-view title="抢单列表" cache-view="false">
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="item" ng-repeat="item in vm.items">
+            <p>
+                <span>距您{{item.distinceforman/1000|number:2}}千米</span>
+                <span class="badge badge-assertive">{{item.orderqty}}单</span>
+            </p>
+            <p>
+                <span class="fr badge badge-assertive" style="margin-right:60px;">
+                    <youhui-time-cal timedetail="item.firstorderpaytime"></youhui-time-cal>
+                </span>
+            </p>
+            <p>
+                <span>
+                    <span class="text-orange">起点:</span>
+                    <span class="text-black">{{item.startaddress}}</span>
+                </span>
+            </p>
+            <p>
+                <span>
+                    <span class="text-blue">终点:</span>
+                    <span class="text-black">{{item.endaddress}}</span>
+                </span>
+            </p>
+            <p>
+                <div>配送距离{{item.distince/1000|number:2}}千米</div>
+            </p>
+            <div class="row">
+                <div class="col col-50">
+                    <button ng-click="vm.grabOrder(item.id)" class="button button-full button-balanced">立即抢单</button>
+                </div>
+                <div class="col col-50">
+                    <button ng-click="vm.showOrderList(item.id)" class="button button-full  button-positive">查看任务</button>
+                </div>
+            </div>
+        </div>
+        <ion-infinite-scroll
+                ng-if="!vm.noMoreItemsAvailable"
+                on-infinite="vm.loadMore()"
+                distance="5%"
+                spinner="dots">
+        </ion-infinite-scroll>
+        <!--
+        <ion-list>
+            <ion-item  class="item" ng-repeat="item in vm.items" >
+                <div class="yy-GrabOneBox">
+                    <div class="yy-GrabOneTop">
+                        <span class="badge badge-assertive">{{item.orderqty}}单</span>
+                        <ul class="yy-GrabOneRight fl">
+                            <li>
+                                <span class="yy-GrabOneBT fl">
+                                    <a  ng-click="vm.getDetail(item.id)">
+                                        <i class="icon ion-map"></i>
+                                        距您{{item.distinceforman/1000|number:2}}千米
+                                    </a>
+                                </span>
+                                <i class="fr yy-GrabOneRed">
+                                    <span ng-bind-html="item.tasknum"></span>
+                                </i>
+                            </li>
+                            <li><span class="yy-GrabOnePSYQ"></span>
+                                <span class="fr yy-GrabOneRed">
+                                    <youhui-time-cal timedetail="item.firstorderpaytime"></youhui-time-cal>
+                                </span>
+                            </li>
+                            <li class="yy-GrabOneYQNR">{{item.deliveryrequire}}</li>
+                            <li><span class="yy-GrabOneQ fl cl">起：</span><em class="yy-GrabOneQD fl">{{item.startaddress}}</em></li>
+                            <li><span class="yy-GrabOneD fl ">到：</span><em class="yy-GrabOneQD fl ">{{item.endaddress}}}</em></li>
+                            <li class="yy-GrabOneJL">配送距离：{{item.distince/1000|number:2}}千米</li>
+                            <li>{{item.itemsname}}</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col col-50">
+                            <button class="button button-full button-balanced">立即抢单</button>
+                        </div>
+                        <div class="col col-50">
+                            <button ng-click="vm.showOrderList(item.id)" class="button button-full  button-positive">查看任务</button>
+                        </div>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll
+        ng-if="!vm.noMoreItemsAvailable"
+        on-infinite="vm.loadMore()"
+        distance="5%"
+        immediate-check="false"
+        spinner="dots">
+        </ion-infinite-scroll>
+        -->
+    </ion-content>
+</ion-view>

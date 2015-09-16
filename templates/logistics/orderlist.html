@@ -1,0 +1,64 @@
+<ion-view view-title="任务列表">
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <div class="bar bar-subheader bar-positive">
+        <span ng-switch on="vm.option">
+            <span ng-switch-when="0">
+                <a class="title" ng-click="vm.grabOrder(vm.id)">点我立即抢单</a>
+            </span>
+            <span ng-switch-when="1">
+                <a class="title" ng-click="vm.finishOrder(vm.id)">完成我的订单</a>
+            </span>
+            <span ng-switch-when="2">
+                <span class="title">已完成订单</span>
+            </span>
+        </span>
+    </div>
+    <ion-content style="top:80px">
+        <div ng-repeat="item in vm.orders">
+            <a class="item item-avatar" href="tel:{{item.sellertel}}">
+                <img src="img/images/phone.png">
+                <h2>{{item.sellername}}</h2>
+                <p>取货:{{item.selleraddr}}</p>
+                <p>{{item.sellertel}}</p>
+            </a>
+            <a class="item item-avatar" href="tel:{{item.buyertel}}">
+                <img src="img/images/phone-01-256.png">
+                <h2>{{item.buyername}}</h2>
+                <p>送达:{{item.buyeraddr}}</p>
+                <p>{{item.buyertel}}</p>
+            </a>
+            <div class="item item-body">
+                <p>运单号码:{{item.deliverybillno}}
+                    <span ng-if="item.finishstate==0">
+                        <span class="text-red fr">未完成</span>
+                    </span>
+                    <span ng-if="item.finishstate==1">
+                        <!--<span class="text-green fr">已完成</span>-->
+                        <span class="fr">
+                            <img src="img/images/taskdone.png"/>
+                        </span>
+                    </span>
+                </p>
+                <p>下单时间:{{item.paytime}}</p>
+                <p>期望送达:{{item.wondertime}}</p>
+                <p>订单金额:{{item.orderamount|currency:'&yen;'}}</p>
+                <p>运费金额:{{item.sendamount|currency:'&yen;'}}</p>
+                <p>小费金额:{{item.tipamount|currency:'&yen;'}}</p>
+            </div>
+            <div class="item item-body" ng-show="item.show">
+                <p ng-repeat="good in item.goods">{{good.goodsname}}&times;{{good.quality}}</p>
+            </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" ng-click="vm.showOrderMap(item.id)">
+                    <i class="icon ion-ios-navigate-outline text-red"></i>
+                    查看地图
+                </a>
+                <a class="tab-item" ng-click="vm.isShow(item.id,$index)">
+                    <i class="icon ion-ios-cart text-green"></i>
+                    查看货物
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

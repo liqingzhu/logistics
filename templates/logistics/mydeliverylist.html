@@ -1,0 +1,66 @@
+<ion-view title="已接运单" cache-view="false">
+    <div class="bar bar-subheader bar-calm">
+        <div class="button-bar">
+            <a class="button button-clear icon ion-ios-star-outline" ng-click="vm.newReceived()">未取货</a>
+            <a class="button button-clear icon ion-ios-star-half" ng-click="vm.hasReceived()">配送中</a>
+            <a class="button button-clear icon ion-ios-star" ng-click="vm.hasDone()">已完成</a>
+        </div>
+    </div>
+    <ion-content style="top:80px">
+        <ion-list
+                show-delete="vm.shouldShowDelete"
+                show-reorder="vm.shouldShowReorder"
+                can-swipe="vm.listCanSwipe">
+            <ion-item class="item" ng-repeat="item in vm.items">
+                <div class="yy-GrabOneBox" ng-click="vm.showDetailInfo(item.id)">
+                    <div class="yy-GrabOneTop">
+                        <!--<span class="badge badge-assertive">易碎</span>-->
+                        <div class="yy-GrabOneLeft1 fl"></div>
+                        <!--实时单<div class="yy-GrabOneLeft fl"></div>-->
+                        <ul class="yy-GrabOneRight fl">
+                            <li>
+                                <span class="yy-GrabOneBT fl">
+                                    <span ng-switch on="vm.orderstate">
+                                        <span ng-switch-when="3">未取货</span>
+                                        <span ng-switch-when="4">配送中</span>
+                                        <span ng-switch-when="5">已完成</span>
+                                    </span>
+                                    <span></span>
+                                    <span ng-switch on="item.flowstate">
+                                        <span ng-switch-when="1">已接单</span>
+                                        <span ng-switch-when="2">已抵店</span>
+                                    </span>
+                                    <span ng-switch on="item.deliverystate">
+                                        <span ng-switch-when="4">妥投失败</span>
+                                        <span ng-switch-when="3">妥投成功</span>
+                                    </span>
+                                </span>
+                                <i class="fr yy-GrabOneRed">
+                                    <youhui-time-cal timedetail="item.paytime"></youhui-time-cal>
+                                </i>
+                            </li>
+                            <li><span class="yy-GrabOnePSYQ">运单号:</span><i class="">{{item.deliveryorderno}}</i></li>
+                            <li class="yy-GrabOneYQNR">
+                                <span ng-if="item.coolflag==1">需冷藏,</span>
+                                <span ng-if="item.breakflag==1">易碎,</span>
+                                <span ng-if="item.warmflag==1">需保温,</span>
+                            </li>
+                            <li><span class="yy-GrabOneQ fl cl">起：</span><em class="yy-GrabOneQD fl">{{item.selleraddr}}</em></li>
+                            <li><span class="yy-GrabOneD fl ">到：</span><em class="yy-GrabOneQD fl ">{{item.buyeraddr}}</em></li>
+                            <li class="yy-GrabOneJL">配送距离：{{item.distince/1000|number:2}}千米</li>
+                            <li>{{item.itemsname}}</li>
+                        </ul>
+                    </div>
+                    <div class="yy-GrabOneBottom"></div>
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll
+                ng-if="!vm.noMoreItemsAvailable"
+                on-infinite="vm.loadMore()"
+                distance="5%"
+                immediate-check="false"
+                >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

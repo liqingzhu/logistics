@@ -1,0 +1,50 @@
+<ion-view view-title="个人资料">
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list">
+            <div class="item item-avatar item-icon-right">
+                <img ng-src="{{vm.man.head}}">
+                <!--<p>设置头像</p>-->
+                <i class="icon ion-social-instagram-outline"></i>
+            </div>
+            <div class="item" ng-click="vm.showNameBox()">
+                姓名 <span ng-bind-html="vm.man.name"></span>
+                <i class="icon ion-edit"></i>
+            </div>
+            <!--<div class="item">
+                等级 <span ng-bind-html="vm.man.level"></span>
+            </div>-->
+            <div class="item">
+                完成单量 <span ng-bind-html="vm.man.complatenum"></span>
+            </div>
+            <div class="item">
+                妥投单量 <span ng-bind-html="vm.man.successnum"></span>
+            </div>
+            <div class="item">
+                加入公司时间 <span ng-bind-html="vm.man.createtime"></span>
+            </div>
+            <div class="item">
+                所属公司 <span ng-bind-html="vm.man.deliverycompanyname"></span>
+            </div>
+            <div class="item">
+                联系电话 <span ng-bind-html="vm.man.phone"></span>
+            </div>
+            <div class="item">
+                身份证号码 <span ng-bind-html="vm.man.idcard"></span>
+            </div>
+            <!--<div class="item item-divider">
+                身份证正面
+            </div>
+            <div class="item item-image">
+                <img ng-src="{{vm.man.idcardfront}}">
+            </div>
+            <div class="item item-divider">
+                身份证反面
+            </div>
+            <div class="item item-image">
+                <img ng-src="{{vm.man.idcardback}}">
+            </div>-->
+        </div>
+    </ion-content>
+</ion-view>
